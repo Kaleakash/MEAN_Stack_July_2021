@@ -1,0 +1,17 @@
+div.abc{
+    background-color: cadetblue;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    color: chocolate;
+    font-weight: bold;
+}
+
+.fontClasses {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+}
