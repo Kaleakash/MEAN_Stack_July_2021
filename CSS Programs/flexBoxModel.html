@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first{
+            display: inline-block;
+            border: 2px green solid ;
+            width: 150px;
+            height: 150px;
+            padding: 50px;
+            margin: 40px;
+        }
+        div.d2 {
+            display: flex;
+            flex-direction: row;
+        }
+        .second{
+            border: 2px green solid ;
+            width: 150px;
+            height: 150px;
+            padding: 50px;
+            /* margin: 40px; */         
+        }
+        #d1 {
+            flex-grow: 4;
+        }
+        #d2 {
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <div class="first">First Div</div>
+        <div class="first">Second Div</div>
+        <div class="first">Third Div</div>
+        <div class="first">Fourth Div</div>
+    </div>
+    <hr/>
+    <div class="d2">
+        <div class="second" id="d1">First Div</div>
+        <div class="second" id="d2">Second Div</div>
+        <div class="second" id="d3">Third Div</div>
+        <div class="second" id="d4">Fourth Div</div>
+    </div>
+</body>
+</html>
