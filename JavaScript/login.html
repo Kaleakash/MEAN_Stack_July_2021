@@ -7,7 +7,6 @@
     <title>Document</title>
     <script type="text/JavaScript">
     function validate(){
-       // alert("function called...")
        var user = document.getElementById("user").value;
        var pass = document.getElementById("pass").value;
        if(user.length==0){
@@ -16,8 +15,12 @@
        }else if(pass.length==0){
            alert("Plz enter the password")
            return false;
-       }else {
+       }else if(user=="Raj" && pass=="123"){
+            alert("Successfully Login")
             return true;
+       }else {
+           alert("Failure try once again")
+           return false;
        }
     }
     </script>
