@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        // function declaration 
+        function info(){
+            alert(" user-defined function called..")
+        }
+        function addNumber(a,b){        // arguments. 
+            var sum = a+b;
+            alert("sum of two number is "+sum);
+        }
+        function updateSalary(id,name,salary,desg){
+            if(desg=="Manager"){
+                return salary+5000;
+            }else if(desg=="Programmer"){
+                return salary+3000;
+            }else if(desg=="Tester"){
+                return salary+1500;
+            }else {
+                return "No Bonus, "+salary;
+            }
+        }
+        function sayHello() {
+            return "Welcome user";
+        }
+       // info();
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+    var message = sayHello();
+    alert(message);
+
+    //var salary = updateSalary(100,"Raj",45000,"Clerk");     
+    //alert(salary);
+    //    info();     //calling the function.
+    //    info();  
+    //    info();   
+           // addNumber(100,200);     // parameter 
+           // addNumber(10,20);
+           // addNumber(1,2);
+    </script>
+</body>
+</html>
