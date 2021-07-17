@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .parent {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            grid-gap: 10px;
+        } */
+        /* .parent {
+            display: grid;
+            grid-template-columns: 100px 200px 100px;
+            grid-template-rows: 50px 150px 250px;
+            grid-gap: 10px;
+        } */
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(3,100px);
+            grid-template-rows: repeat(3,100px);
+            grid-gap: 10px;
+            
+        }
+        .inner{
+            border:solid red 2px;
+            background-color: skyblue;
+        }
+        #d1 {
+            /* grid-row-start: 2;
+            grid-row-end: span 2; */
+            grid-column-start: 2;
+            /* grid-column-end: span 2 ; */
+        }
+        #d9 {
+            grid-row-start: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div id="d1" class="inner">First</div>
+        <div id="d2" class="inner">Second</div>
+        <div id="d3" class="inner">Third</div>
+        <div id="d4" class="inner">Fourth</div>
+        <div id="d5" class="inner">Fifth</div>
+        <div id="d6" class="inner">Sixth</div>
+        <div id="d7" class="inner">Seventh</div>
+        <div id="d8" class="inner">Eight</div>
+        <div id="d9" class="inner">Nine</div>
+    </div>
+</body>
+</html>

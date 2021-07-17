@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var a = 10;
+        var b = 20;
+        var sum = a+b;
+        document.write("Sum of two number is "+sum);
+        var m=10;       // number 
+        var n="10";     // string 
+        document.write("<br> ==<br/>");
+        document.write(m==n);
+        document.write("<br> ===<br/>");
+        document.write(m===n);          // it check value as well as their data type
+        var res;
+        document.write("<br/>type of res "+typeof res)
+        res = 10;
+        document.write("<br/>type of res "+typeof(res))
+        res = 10.10;
+        document.write("<br/>type of res "+typeof(res))
+        res = "Ramesh";
+        document.write("<br/>type of res "+typeof(res))
+        res = true;
+        document.write("<br/>type of res "+typeof(res))
+        res = new Date();
+        document.write("<br/>type of res "+typeof(res))
+        var a=10;
+        var b =50;
+        var res = a>b? "a is largest" : "b is largest" ;
+        document.write("<br/>Result is "+res)
+        var a = true;
+        var b = false;
+        var result1 = a && b;           // both condition must be true then result true
+        var result2 = a && a; 
+        var result3 = a || b;           // if any condition true then result true.
+        var result4 = b || b;     
+        var result5 =  !a;              // reverse   
+        document.write("<br> "+result1)
+        document.write("<br> "+result2)
+        document.write("<br> "+result3)
+        document.write("<br> "+result4)
+        document.write("<br> "+result5)
+        var a = 2;
+        var b =3;
+        var result6 = a&b;
+        document.write("<Br/>"+result6);        // 2 = 0010, 3, 0011    0010     
+    </script>
+</body>
+</html>
