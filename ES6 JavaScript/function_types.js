@@ -40,3 +40,27 @@ let findLargest=(a,b)=> {
     }
 }
 document.write("<br> Arrow style with parameter and multi line statement "+findLargest(20,10))
+
+
+
+function greeting(fname,callback){
+    return "Welcome "+callback(fname);
+}
+
+function maleInfo(fname){
+    return "Mr "+fname;
+}
+let femaleInfo=function (fname){
+    return "Miss "+fname;
+}
+document.write("<br/>")
+document.write(greeting("Raj",maleInfo));
+document.write("<br/>")
+document.write(greeting("Reeta",femaleInfo));
+document.write("<br/>");
+document.write(greeting("Meeta",function (fname){
+    return "Miss "+fname;
+}))
+document.write("<br/>");
+document.write(greeting("Veeta",(fname)=>"Miss "+fname));
+
