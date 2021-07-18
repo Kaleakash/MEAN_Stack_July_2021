@@ -10,18 +10,26 @@
        var user = document.getElementById("user").value;
        var pass = document.getElementById("pass").value;
        if(user.length==0){
-           alert("Plz enter the username")
+document.getElementById("e1").innerHTML="User Name is requried";
+document.getElementById("e2").innerHTML="";
            return false;
        }else if(pass.length==0){
-           alert("Plz enter the password")
+        document.getElementById("e1").innerHTML="";
+        document.getElementById("e2").innerHTML="Password is requried";    
            return false;
        }else if(user=="Raj" && pass=="123"){
             alert("Successfully Login")
+            reset();
             return true;
        }else {
            alert("Failure try once again")
+           reset();
            return false;
        }
+    }
+    function reset() {
+        document.getElementById("e1").innerHTML="";
+        document.getElementById("e2").innerHTML="";
     }
     </script>
 </head>
@@ -29,11 +37,33 @@
     <h2>Login Page - Using JavaScript</h2>
     <form action="home.html" onsubmit="return validate()">
         <label>UserName</label>
-        <input type="text" name="user" id="user"/><br/>
+        <input type="text" name="user" id="user"/>
+        <span id="e1" style="color: red;"></span>
+        <br/>
         <label>Password</label>
-        <input type="password" name="pass" id="pass"/><br/>
+        <input type="password" name="pass" id="pass"/>
+        <span id="e2" style="color: red;"></span>
+        <br/>
+        <input type="submit" value="submit"/>
+        <input type="reset"/>
+    </form>
+
+    <h2>Login Page - Using HTML5</h2>
+    <form action="home.html">
+        <label>UserName</label>
+        <input type="text" name="user1" id="user1" required/><br/>
+        <label>Password</label>
+        <input type="password" name="pass1" id="pass1" required/><br/>
         <input type="submit" value="submit"/>
         <input type="reset"/>
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
