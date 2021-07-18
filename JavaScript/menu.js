@@ -1,4 +1,4 @@
-
+var count =1;
 function addData() {
     var name = document.getElementById("name").value;
     var age = document.getElementById("age").value; 
@@ -15,24 +15,30 @@ function addData() {
     } else {
         myPTag.setAttribute("class","myClass1");    
     }
-
+    myPTag.setAttribute("id",count);
     var deleteNode = document.createElement("a");
     var deleteNodeContent = document.createTextNode("X");
     deleteNode.setAttribute("href","#");
-    deleteNode.setAttribute("onClick","deleteData()");
+    deleteNode.setAttribute("onClick","deleteInfo("+count+")");
     deleteNode.appendChild(deleteNodeContent);
     //Add the cotent to p tag;
     myPTag.appendChild(myPTagContent);
     myPTag.appendChild(deleteNode);
 
     // <a href="#" onClick="deleteData()">X</a>
-
+    count++;
     document.getElementById("main").appendChild(myPTag);
+    reset();
 }
 
-function deleteData(myPTag) {
-    console.log("delete fun called..");
-    console.log(myPTag)
+function deleteInfo(count) {
+    console.log("delete fun called.."+count);
+    document.getElementById(count).remove();
+}
+
+function reset() {
+    document.getElementById("name").value="";
+    document.getElementById("age").value=""; 
 }
 
 /*
