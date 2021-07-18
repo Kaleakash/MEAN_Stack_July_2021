@@ -1,3 +1,4 @@
+
 function addData() {
     var name = document.getElementById("name").value;
     var age = document.getElementById("age").value; 
@@ -14,12 +15,25 @@ function addData() {
     } else {
         myPTag.setAttribute("class","myClass1");    
     }
+
+    var deleteNode = document.createElement("a");
+    var deleteNodeContent = document.createTextNode("X");
+    deleteNode.setAttribute("href","#");
+    deleteNode.setAttribute("onClick","deleteData()");
+    deleteNode.appendChild(deleteNodeContent);
     //Add the cotent to p tag;
     myPTag.appendChild(myPTagContent);
+    myPTag.appendChild(deleteNode);
+
+    // <a href="#" onClick="deleteData()">X</a>
 
     document.getElementById("main").appendChild(myPTag);
 }
 
+function deleteData(myPTag) {
+    console.log("delete fun called..");
+    console.log(myPTag)
+}
 
 /*
 <p style="color:red;font-size:24px" class="myClass">Name is Raj, Age is 21</p>
