@@ -19,23 +19,41 @@
 //     document.write("<br> Value "+n);
 // }
 
-let num = [10,20,30,40,50];
-// 1st way 
-num.forEach(display);      // callback function as a parameter 
+// let num = [10,20,30,40,50];
+// // 1st way 
+// num.forEach(display);      // callback function as a parameter 
 
-function display(n,i){
-    document.write("<br> Value is "+n+" Index position "+i)
-}
+// function display(n,i){
+//     document.write("<br> Value is "+n+" Index position "+i)
+// }
 
-// 2nd way Es5 style  
-num.forEach(function display(n,i){
-    document.write("<br> Value is "+n+"Index position "+i)
-});
+// // 2nd way Es5 style  
+// num.forEach(function display(n,i){
+//     document.write("<br> Value is "+n+"Index position "+i)
+// });
 
-//3rd way Es6 style 
-num.forEach((n,i)=>document.write("<br/> Value is "+n+" Index position "+i));
+// //3rd way Es6 style 
+// num.forEach((n,i)=>document.write("<br/> Value is "+n+" Index position "+i));
+
+// let num = [100,200,300,400,500];
+// let result1 = num.find(v=>v==10);       // no element return undefined 
+// document.write("<br> Result1 is "+result1)  
+// let result2 = num.find(v=>v==200);          // return the value. 
+// document.write("<br> Result1 is "+result2)
+
+// let result3 = num.findIndex(v=>v==10);      // no element return -1
+// document.write("<br> Result1 is "+result3)
+// let result4 = num.findIndex(v=>v==300);        // return index position 
+// document.write("<br> Result1 is "+result4)
 
 
+// let num = [100,200,300,400,500];
 
-
-
+// num.forEach(v=>document.write("<br/> Value is "+v));
+// num.forEach(v=>document.write("<br/> Value is "+(v+10)));
+// num.map(v=>v+10).forEach(v=>document.write("<br/> Value is "+v));
+// document.write("<br/>")
+// document.write(num);
+// document.write("<br/>")
+// num = num.map(v=>v+1);
+// document.write(num)
