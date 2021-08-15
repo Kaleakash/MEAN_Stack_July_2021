@@ -1,0 +1,12 @@
+import {display1,display} from './abc';
+import {display2,display as dis} from './xyz';
+// import {Employee,abc,add} from './info';
+import * as obj from './info';
+display1();
+display2();
+display();
+dis();
+console.log(obj.abc);   
+console.log(obj.add(100,200));
+let emp = new obj.Employee();
+emp.display();
