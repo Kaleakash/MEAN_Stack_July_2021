@@ -1,0 +1,20 @@
+<div>
+    <h2>Event Binding</h2>
+    <input type="button" value="Click here" (click)="fun()"/>
+    <br/>
+    {{msg}}<br/>
+    <span [innerText]="msg"></span>
+    <br/>
+    Name :<input type="text" #nameRef/><br/>
+    <input type="button" value="Click Here" (click)="passName(nameRef)"/>
+    <br/>
+    {{name}}
+    <br/>
+    1st Number :<input type="text" #n1 /><br/>
+    2nd Number :<input type="text" #n2 /><br/>
+    <input type="button" value="Add" (click)="addNumber(n1,n2)"/><br/>
+    <br/>
+    {{sum}}
+</div>
+
+

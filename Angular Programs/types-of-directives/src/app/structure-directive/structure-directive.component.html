@@ -1,0 +1,50 @@
+<div>
+    <!-- <h2>Structure Directive</h2>
+    <div *ngIf="true">This is div tag</div>
+    <div *ngIf="false">This is div tag</div>
+    <div *ngIf="f1">This is div tag value from component</div>
+    <div *ngIf="f2">This is div tag value from component</div>
+    <br/>
+    <input type="button" value="click here" (click)="fun()"/><br/>
+    <div *ngIf="f3">
+        This is simple div tag contents
+    </div>
+    <br/>
+    <input type="button" [value]="b1" (click)="change()"/>
+    <div *ngIf="flag">
+        <h2>This is Simple Structure directive example</h2>
+        <p>This description about Structure Diretive</p>
+    </div> -->
+    <br/>
+    <h2>*ngFor Example</h2>
+    <h3>Array elements </h3>
+    {{num}}
+    <h2>Display using loop</h2>
+    <div *ngFor="let n of num">
+            <p>{{n}}</p>
+    </div>
+    <h2>All student names are </h2>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+    <h2>Employee Details </h2>
+    Id is {{emp.id}}, Name is {{emp.name}} and age is {{emp.age}}<br/>
+    <br/>
+    <h2>Employee Records are </h2>
+    <table border="1">
+            <tr>
+                <th>EmpId</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr *ngFor="let emp of employees">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.age}}</td>
+            </tr>
+    </table>
+</div>
+
+
+
+
