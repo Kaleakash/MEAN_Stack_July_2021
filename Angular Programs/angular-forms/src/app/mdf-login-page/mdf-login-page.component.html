@@ -2,10 +2,38 @@
     <h2>Login Page - Using Model Driven or Reactive Form</h2>
     <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
         <label>UserName</label>
-        <input type="text" formControlName="user"/><br/>
+        <input type="text" formControlName="user"/>
+
+        <div *ngIf="!loginRef.controls.user.valid && 
+             (loginRef.controls.user.dirty || loginRef.controls.user.touched)">
+    
+<span [hidden]="!loginRef.controls.user.errors?.required " style="color:red">UserName is required</span>
+<span [hidden]="!loginRef.controls.user.errors?.minlength" style="color:red">Min 2 character must be required</span>
+             </div>
+
+        <br/>
         <label>Password</label>
-        <input type="password" formControlName="pass"/><br/>
-        <input type="submit" value="submit"/>
+        <input type="password" formControlName="pass"/>
+
+        <div *ngIf="!loginRef.controls.pass.valid && 
+             (loginRef.controls.pass.dirty || loginRef.controls.pass.touched)">
+
+        <span [hidden]="!loginRef.controls.pass.errors?.required " style="color:red">Password must be requried</span>
+        <span [hidden]="!loginRef.controls.pass.errors?.pattern" style="color:red">Pattern Must be matach</span>
+             
+            </div>
+        <br/>
+        <label>Email Id</label>
+        <input type="email" formControlName="email"/>
+        <div *ngIf="!loginRef.controls.email.valid && 
+        (loginRef.controls.email.dirty || loginRef.controls.email.touched)">
+
+   <span [hidden]="!loginRef.controls.email.errors?.required " style="color:red">Email Id must be required</span>
+   
+        
+       </div>
+       <br/>
+        <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
         <input type="reset" value="reset"/>
     </form>
     <br/>

@@ -17,7 +17,7 @@ export class TdfLoginPageComponent implements OnInit {
     //console.log(loginRef);
     let login = loginRef.value;
     //console.log(login);
-    if(login.user=="Raj" && login.pass=="123"){
+    if(login.user=="Raj" && login.pass=="A56"){
         this.msg = "Successfully Login"
     }else {
         this.msg = "Failure try once again"
