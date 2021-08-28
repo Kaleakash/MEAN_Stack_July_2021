@@ -10,10 +10,14 @@ export class StructureDirectiveComponent implements OnInit {
   f2:boolean = false;
   f3:boolean = true;
   b1:string ="Hide";
-  flag:boolean = true;
+  
+      flag:boolean = true;
+
   num:Array<number>=[10,20,30,40,50,60];      // array number 
   names:Array<string>=["Raj","Raju","Ram","Ramesh","Rajesh"]; // array string 
+  
   emp = new Employee(100,"Raj",32);
+
   employees:Array<Employee>=new Array();    // array object. 
   constructor() { 
       let emp1 = new Employee(101,"Ramesh",25);
@@ -31,7 +35,7 @@ export class StructureDirectiveComponent implements OnInit {
     this.f3 = false;
   }
   change(){
-      if(this.flag){
+      if(this.flag){      // true 
         this.flag= false;
         this.b1="Show"
       }else {

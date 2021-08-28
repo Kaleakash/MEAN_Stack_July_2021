@@ -1,5 +1,5 @@
 <div>
-    <!-- <h2>Structure Directive</h2>
+    <h2>Structure Directive</h2>
     <div *ngIf="true">This is div tag</div>
     <div *ngIf="false">This is div tag</div>
     <div *ngIf="f1">This is div tag value from component</div>
@@ -9,16 +9,19 @@
     <div *ngIf="f3">
         This is simple div tag contents
     </div>
+    
     <br/>
     <input type="button" [value]="b1" (click)="change()"/>
-    <div *ngIf="flag">
-        <h2>This is Simple Structure directive example</h2>
-        <p>This description about Structure Diretive</p>
-    </div> -->
-    <br/>
+    <div *ngIf="flag; else flag1">
+        <h2>Show.............</h2>
+    </div>
+    <ng-template #flag1>
+          <h2>Hide........................</h2>  
+    </ng-template>
+    <!-- <br/>
     <h2>*ngFor Example</h2>
     <h3>Array elements </h3>
-    {{num}}
+   Array variable value {{num}}
     <h2>Display using loop</h2>
     <div *ngFor="let n of num">
             <p>{{n}}</p>
@@ -33,16 +36,18 @@
     <h2>Employee Records are </h2>
     <table border="1">
             <tr>
+                <th>Index Rec</th>
                 <th>EmpId</th>
                 <th>Name</th>
                 <th>Age</th>
             </tr>
-            <tr *ngFor="let emp of employees">
+            <tr *ngFor="let emp of employees;let i = index">
+                    <td>{{i}}</td>
                     <td>{{emp.id}}</td>
                     <td>{{emp.name}}</td>
                     <td>{{emp.age}}</td>
             </tr>
-    </table>
+    </table> -->
 </div>
 
 
