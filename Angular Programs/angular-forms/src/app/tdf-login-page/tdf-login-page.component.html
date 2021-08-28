@@ -2,15 +2,30 @@
     <h2>Login Page using Template Driven Form</h2>
     <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
         <label>UserName</label>
-             <input type="text" name="user" ngModel/><br/>
+             <input type="text" name="user" ngModel required minlength="2"/>
+             <div *ngIf="!loginRef.controls.user.valid && 
+             (loginRef.controls.user.dirty || loginRef.controls.user.touched)">
+    
+<span [hidden]="!loginRef.controls.user.errors?.required " style="color:red">UserName is required</span>
+<span [hidden]="!loginRef.controls.user.errors?.minlength" style="color:red">Min 2 character must be required</span>
+             </div>
+             <br/>
         <label>Password</label>
-            <input type="password" name="pass" ngModel/><br/>
+            <input type="password" name="pass" ngModel required pattern="[A-Z]\d{2}"/>
+            <div *ngIf="!loginRef.controls.pass.valid && 
+             (loginRef.controls.pass.dirty || loginRef.controls.pass.touched)">
+
+        <span [hidden]="!loginRef.controls.user.errors?.required " style="color:red">Password must be requried</span>
+        <span [hidden]="!loginRef.controls.user.errors?.pattern" style="color:red">Pattern Must be matach</span>
+             
+            </div>
+            <br/>
             <label>Gender</label>
             <input type="radio" name="gender" value="male" ngModel>male
             <input type="radio" name="gender" value="female" ngModel>female<br/>
-        <input type="submit" value="submit"/>
+        <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
         <input type="reset" value="reset"/>
-    </form>
+    </form>     
     <br/>
     {{msg}}
 </div>
