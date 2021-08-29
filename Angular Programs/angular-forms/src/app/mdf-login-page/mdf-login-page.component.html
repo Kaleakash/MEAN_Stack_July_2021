@@ -28,8 +28,8 @@
         <div *ngIf="!loginRef.controls.email.valid && 
         (loginRef.controls.email.dirty || loginRef.controls.email.touched)">
 
-   <span [hidden]="!loginRef.controls.email.errors?.required " style="color:red">Email Id must be required</span>
-   
+   <span [hidden]="!loginRef.controls.email.errors?.required" style="color:red">Email Id must be required</span>
+   <span [hidden]="!loginRef.controls.email.errors?.pattern" style="color:red">Pattern must be match</span>
         
        </div>
        <br/>

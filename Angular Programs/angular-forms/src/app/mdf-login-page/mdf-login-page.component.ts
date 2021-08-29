@@ -10,8 +10,8 @@ export class MdfLoginPageComponent implements OnInit {
   
   loginRef = new FormGroup({
     user:new FormControl("",[Validators.required,Validators.minLength(2)]),
-    pass:new FormControl("",[Validators.required,Validators.pattern("[A-Z]\\d{2}")]),
-    email:new FormControl("",[Validators.required])
+    pass:new FormControl("",[Validators.required,Validators.pattern("[A-Z]\\d{2}")]),              
+    email:new FormControl("",[Validators.required,Validators.pattern("[a-zA-Z]+\@[a-zA-Z]+\.com")])
   })
   msg:string=""
   constructor() { }
