@@ -1,0 +1,16 @@
+<div>
+    <h2>Child1 component</h2>
+   <p>Parent Name is child component {{pname}}</p> 
+   <ul>
+       <li *ngFor="let std of studentsName">{{std}}</li>
+   </ul>
+   <br/>
+   
+   Age :<input type="text" #ageRef/><br/>
+   <input type="button" value="Click here"
+   (click)="passAge(ageRef)"/>
+   <br/>
+   The child age is {{childAge}}
+   <br/>
+   Child designation is {{desg}}
+</div>

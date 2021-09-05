@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let q of questions;let i = index">
+        <p>{{i+1}}: {{q.question}}</p>
+        <input type="radio" name="q.question" value="q.ans1">{{q.ans1}}
+        <input type="radio" name="q.question" value="q.ans2">{{q.ans2}}
+        <input type="radio" name="q.question" value="q.ans3">{{q.ans3}}
+        <input type="radio" name="q.question" value="q.ans4">{{q.ans4}}
+    </div> 
+</div>

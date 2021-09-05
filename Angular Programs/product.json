@@ -24,6 +24,16 @@
       "id": "1",
       "pname": "TV",
       "price": "56000"
+    },
+    {
+      "id": "2",
+      "pname": "Watch",
+      "price": "5000"
+    },
+    {
+      "id": "3",
+      "pname": "Pen Drive",
+      "price": "1200"
     }
   ]
 }

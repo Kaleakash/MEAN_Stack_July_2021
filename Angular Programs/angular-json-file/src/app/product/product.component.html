@@ -13,5 +13,16 @@
     <br/>
     {{msg}}
     <hr/>
-    
+    <table border="1">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+        </tr>
+        <tr *ngFor="let p of products">
+                <td>{{p.id}}</td>
+                <td>{{p.pname}}</td>
+                <td>{{p.price}}</td>
+        </tr>
+    </table>
 </div>

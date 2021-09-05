@@ -15,4 +15,9 @@ export class ProductService {
     //2nd parameter is data in json format. 
     return this.http.post("http://localhost:3000/products",product);
   }
+
+  retriveAllProductDetails(): Observable<Product[]> {
+    return this.http.get<Product[]>("http://localhost:3000/products");
+  }
+  
 }
