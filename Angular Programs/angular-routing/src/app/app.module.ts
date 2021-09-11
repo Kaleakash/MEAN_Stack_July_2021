@@ -8,6 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { MyAuthGuards } from './my.auth.guards';
+import { Sub1Component } from './sub1/sub1.component';
+import { Sub2Component } from './sub2/sub2.component';
+import { Sub3Component } from './sub3/sub3.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
     AboutUsComponent,
     ContactUsComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotfoundComponent,
+    Sub1Component,
+    Sub2Component,
+    Sub3Component
   ],
   imports: [
     BrowserModule,
@@ -23,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MyAuthGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

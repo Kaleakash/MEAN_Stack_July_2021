@@ -13,23 +13,26 @@ export class LoginComponent implements OnInit {
     pass:new FormControl()
   })
   constructor(public loginSer:LoginService,
-    public router:Router) { }   //DI for Service class. 
-
+  public router:Router) { }   //DI for Service class. 
+  msg:string="";
   ngOnInit(): void {
   }
-
   checkUser() {
     let login = this.loginRef.value;
-    //console.log(login);
      this.loginSer.checkUser().subscribe(result=> {
         let message = result.find(l=>l.user==login.user && l.pass==login.pass);
         if(message==undefined){
-            console.log("Failure")
+            this.msg = "Invalid username or password"
         }else {
-          console.log("Success");
-          this.router.navigate(["home"]);   
+          // in reponse after success message from server. 
+          //Server side technologies 
+          //provide you unique id ie session id.
+          // JWT (json web token)
+          sessionStorage.setItem("token",login.user); 
+          this.router.navigate(["home",login.user]);  // append data through url    
         }
-      },error=>console.log(error));   
+      },error=>console.log(error));  
+      this.loginRef.reset(); 
   }
   
 }
