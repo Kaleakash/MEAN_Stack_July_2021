@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+        <label>PId</label>
+        <input type="text" formControlName="pid"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="pname"/><br/>
+        <label>Price</label>
+        <input type="text" formControlName="price"/><br/>
+        <input type="submit" value="store product"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let product of products">
+               <td>{{product.pid}}</td>
+               <td>{{product.pname}}</td>
+               <td>{{product.price}}</td> 
+        </tr>
+    </table>
+</div>
