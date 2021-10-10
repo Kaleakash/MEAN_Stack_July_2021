@@ -13,7 +13,7 @@ let products =[
 // display all produt details
 // http://localhost:9090/allProducts
  app.get("/allProducts",(req,res)=> {
-    res.json(products);
+    res.json(products);         // we retrieve from mongo db database. 
 });
 
 // retrieve the product bases upon product id
@@ -23,7 +23,7 @@ app.get("/findProductById/:pid",(req,res)=> {
         let pid = req.params.pid;
         let result = products.find(p=>p.pid==pid);
         if(result==undefined){
-                res.json({"msg":"Product not present with id "+pid})
+                res.json({"msg":"REcord not present"})
                 //res.send("Product Not found");
         }else {
                 res.json(result);
@@ -38,7 +38,7 @@ app.post("/storeProduct",(req,res)=> {
     let product = req.body;
     let result = products.find(p=>p.pid == product.pid);
     if(result==undefined){
-            products.push(product);
+            products.push(product);         // we store in mongo db database. 
             res.send("Product record stored successfully..")
     }else {
             res.send("Product Id must be unique");
@@ -53,7 +53,8 @@ app.put("/updateProductPrice",(req,res)=> {
     if(index<0){
              res.send("Product is not available with id "+product.pid);   
     }else {
-        products[index].price = products[index].price + product.price;
+        //products[index].price = products[index].price + product.price;    //increment 
+        products[index].price = product.price;              // replace 
             res.send("Product price updated successfully");
     }
 })
@@ -72,5 +73,16 @@ app.delete("/deleteProductById/:pid",(req,res)=> {
     }
 })
 
+let employees = [
+    {id:100,name:"Raj",salary:12000,address:{city:"Bangalore",state:"Kar"}},
+    {id:101,name:"Ramesh",salary:14000,address:{city:"Pune",state:"Mh"}}
+]
+
+// http://localhost:9090/employees 
+
+app.get("/employees",(req,res)=> {
+    res.json(employees);
+})
 
 app.listen(9090,()=>console.log("Server running on port number 9090"));
+

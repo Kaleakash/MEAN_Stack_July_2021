@@ -9,17 +9,37 @@
         <input type="submit" value="store product"/>
         <input type="reset" value="reset"/>
     </form>
+    {{storeMsg}}
+    <hr/>
+    <label>Seach Record</label>
+    <input type="text" #pid (keyup)="searchRecord(pid.value)"/><br/>
+    {{searchData|json}}<br/>
     <hr/>
     <table border="1">
         <tr>
             <th>PId</th>
             <th>PName</th>
             <th>Price</th>
+            <th>Delete</th>
+            <td>Update</td>
         </tr>
         <tr *ngFor="let product of products">
                <td>{{product.pid}}</td>
-               <td>{{product.pname}}</td>
-               <td>{{product.price}}</td> 
+               <td>{{product.pname | uppercase}}</td>
+               <td>{{product.price | currency :'&#8377;'}}</td>
+               <td><input type="button" value="Delete" (click)="deleteProduct(product.pid)"/></td> 
+               <td><input type="button" value="Update" (click)="updateProduct(product)"/></td>
         </tr>
     </table>
+    <br/>
+    {{deleteMsg}}
+    <br/>
+    <div *ngIf="flag">
+        <label>PId</label>
+        <input type="text" [(ngModel)]="pid1" readonly/><br/>
+        <label>Price</label>
+        <input type="text" [(ngModel)]="price1"/><br/>
+        <input type="button" value="update record" (click)="updateRecordInfo()"/>
+    </div>
+    {{updatedResult}}
 </div>
