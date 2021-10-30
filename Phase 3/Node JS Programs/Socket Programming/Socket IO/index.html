@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+    let socket = io();  // load the function 
+    // This code is use to send the data to Server     
+    //socket.emit("obj","Hello Server...."); // usign key - value.
+    let emp = {id:100,name:"Ravi",age:21}
+    socket.emit("obj",emp); 
+   // This code is use to receive the data from a server. 
+    socket.on("obj1",(msg)=> {
+        console.log(msg);
+    })
+    </script>
+</head>
+<body>
+    <h2>Socket IO Client Application</h2>
+</body>
+</html>
