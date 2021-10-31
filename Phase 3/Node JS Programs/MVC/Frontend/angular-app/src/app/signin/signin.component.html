@@ -1,0 +1,9 @@
+<form [formGroup]="userRef" (ngSubmit)="checkUser()">
+    <h2>Login Page</h2>
+    <label>Email</label>
+    <input type="email" formControlName="email"/><br/>
+    <label>Password</label>
+    <input type="password" formControlName="password"/><br/>
+    <input type="submit" value="SignIn"/>
+    <input type="reset" value="reset"/>
+</form>

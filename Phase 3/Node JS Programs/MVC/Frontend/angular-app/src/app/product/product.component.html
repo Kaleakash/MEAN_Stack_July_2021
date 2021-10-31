@@ -1,0 +1,31 @@
+<div>
+    <h2>Add Product</h2>
+    <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+        <label>ProductId</label>
+        <input type="text" formControlName="_id"/><br/>
+        <label>PName</label>
+        <input type="text" formControlName="name"/><br/>
+        <label>Price</label>
+        <input type="text" formControlName="price"/><br/>
+        <input type="submit" value="store product"/>
+        <input type="reset" value="reset"/>
+    </form>
+    {{msg}}
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let p of products">
+                <td>{{p._id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td><input type="button" value="Delete" (click)="deleteRec(p._id)"/></td>
+        </tr>
+    </table>
+    <br/>
+    {{deleteMsg}}
+</div>
