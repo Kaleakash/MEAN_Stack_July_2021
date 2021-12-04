@@ -13,7 +13,7 @@ export class AppComponent {
   result : boolean = true;
   msg:string="Welcome to Angular Training";
   names:Array<string>=["Raj","Seeta","Veera","Ajay","Vijay"];
-
+  info:string="";
   sayHello():string {
     return "Welcome to Angular testing";
   }
@@ -23,5 +23,9 @@ export class AppComponent {
     }else {
       return false;
     }
+  }
+
+  changeValue() {
+      this.info="Welcome to Angular"
   }
 }

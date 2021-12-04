@@ -29,6 +29,18 @@ describe('AppComponent', () => {
    expect(compiled.querySelector('h1')?.textContent).toEqual('Welcome Angular Testing');
   });
 
+  it('Click Event', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();      // load the content in html page 
+    const app = fixture.componentInstance;
+    //const compiled = fixture.nativeElement as HTMLElement;
+    const button = fixture.debugElement.nativeElement.querySelector("#b1");
+    button.click();
+    expect(app.info).toBe("Welcome to Angular Training");
+   //expect(compiled.querySelector('h1')?.textContent).toEqual('Welcome Angular Testing');
+  });
+
+
   it("component property variable testing",()=> {
     let componentId = TestBed.createComponent(AppComponent);
     let componentRef = componentId.componentInstance;
@@ -50,4 +62,6 @@ describe('AppComponent', () => {
     let result = componentRef.checkUser("Raj","123");
     expect(result).toBeTrue();
   })
+
+  
 });
