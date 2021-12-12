@@ -1,0 +1,76 @@
+update ec2 instance 
+
+sudo yum -y update
+
+--------------->Git install 
+
+sudo yum install git -y
+
+
+-----------------------> Node JS 
+
+node --version 
+
+
+install node 
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+
+. ~/.nvm/nvm.sh
+
+nvm install node		(node version manager)
+
+
+--------------Docker-------------------- 
+
+install docker 
+
+sudo yum install docker
+
+sudo service docker start
+
+sudo docker info		(start all docker command with word sudo)
+
+sudo docker images 
+
+
+-------> Mongo DB install 
+install mongodb database 
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/	refer this documentation 
+
+
+sudo vi /etc/yum.repos.d/mongodb-org-5.0.repo		: this will create the file 
+
+[mongodb-org-5.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/5.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+
+cont key
+:wq!
+
+
+sudo yum install -y mongodb-org
+
+to start the server 
+
+sudo systemctl start mongod
+
+if wait to start 
+
+sudo systemctl daemon-reload
+
+to check the status 
+
+sudo systemctl status mongod
+
+Then to run the application 
+
+mongo 
+
+
+
